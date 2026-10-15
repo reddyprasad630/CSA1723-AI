@@ -1,0 +1,63 @@
+import heapq
+
+class PuzzleNode:
+    def __init__(self, state, parent=None, action=None, g=0, h=0):
+        self.state = state  # Tuple representation of 3x3 grid
+        self.parent = parent
+        self.action = action
+        self.g = g  # Cost from start to current node
+        self.h = h  # Heuristic cost (Manhattan distance)
+        self.f = g + h  # Total estimated cost
+
+    def __lt__(self, other):
+        return self.f < other.f
+
+def get_manhattan_distance(state, goal_state):
+    distance = 0
+    for i in range(9):
+        val = state[i]
+        if val != 0:
+            goal_idx = goal_state.index(val)
+            # Convert 1D index to 2D (row, col) coordinates
+            curr_row, curr_col = i // 3, i % 3
+            goal_row, goal_col = goal_idx // 3, goal_idx % 3
+            distance += abs(curr_row - goal_row) + abs(curr_col - goal_col)
+    return distance
+
+def get_neighbors(state):
+    neighbors = []
+
+OUTPUT:
+
+--- Starting Configuration ---
+1 | 2 | 3
+  | 4 | 6
+7 | 5 | 8
+---------
+Status: Solved in 3 moves
+
+Start State:
+1 | 2 | 3
+  | 4 | 6
+7 | 5 | 8
+---------
+Step 1: Move blank 'Right'
+1 | 2 | 3
+4 |   | 6
+7 | 5 | 8
+---------
+Step 2: Move blank 'Down'
+1 | 2 | 3
+4 | 5 | 6
+7 |   | 8
+---------
+Step 3: Move blank 'Right'
+1 | 2 | 3
+4 | 5 | 6
+7 | 8 |  
+---------
+
+
+    
+    blank_idx = state.index(0)
+    row, col = blank_idx // 3, blank_idx % 3
