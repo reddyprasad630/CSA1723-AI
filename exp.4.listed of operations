@@ -1,0 +1,93 @@
+# 1. Creation of a Simple List and a Nested List
+simple_list = [10, 20, 30, 40, 50]
+nested_list = [[1, 2, 3], ['a', 'b', 'c'], [True, False]]
+
+print("--- 1. Lists Created ---")
+print(f"Simple List: {simple_list}")
+print(f"Nested List: {nested_list}\n")
+
+# 2. Length of a List
+print("--- 2. Length of Lists ---")
+print(f"Length of Simple List: {len(simple_list)}")
+print(f"Length of Nested List: {len(nested_list)}\n")
+
+# 3. Concatenation of Lists
+list_a = [1, 2, 3]
+list_b = [4, 5, 6]
+concatenated_list = list_a + list_b
+print("--- 3. Concatenation ---")
+print(f"List A: {list_a}")
+print(f"List B: {list_b}")
+print(f"Concatenated List (A + B): {concatenated_list}\n")
+
+# 4. Membership Testing
+print("--- 4. Membership ---")
+print(f"Is 30 in Simple List? {30 in simple_list}")
+print(f"Is 100 in Simple List? {100 in simple_list}")
+print(f"Is [1, 2, 3] in Nested List? {[1, 2, 3] in nested_list}\n")
+
+# 5. Iteration over a List
+print("--- 5. Iteration ---")
+print("Iterating through Simple List:")
+for item in simple_list:
+    print(f"- {item}")
+print("Iterating through Nested List:")
+for sublist in nested_list:
+    print(f"- Sublist: {sublist}")
+print()
+
+# 6. Indexing (Accessing Elements)
+print("--- 6. Indexing ---")
+print(f"First element of Simple List (index 0): {simple_list[0]}")
+print(f"Last element of Simple List (index -1): {simple_list[-1]}")
+print(f"Accessing element inside Nested List (nested_list[1][2]): {nested_list[1][2]}\n")
+
+# 7. Slicing (Extracting Sub-lists)
+print("--- 7. Slicing ---")
+print(f"Slice from index 1 to 4: {simple_list[1:4]}")
+print(f"First 3 elements: {simple_list[:3]}")
+print(f"Every second element (using step): {simple_list[::2]}")
+print(f"Reversed list: {simple_list[::-1]}")
+
+OUTPUT:
+
+--- 1. Lists Created ---
+Simple List: [10, 20, 30, 40, 50]
+Nested List: [[1, 2, 3], ['a', 'b', 'c'], [True, False]]
+
+--- 2. Length of Lists ---
+Length of Simple List: 5
+Length of Nested List: 3
+
+--- 3. Concatenation ---
+List A: [1, 2, 3]
+List B: [4, 5, 6]
+Concatenated List (A + B): [1, 2, 3, 4, 5, 6]
+
+--- 4. Membership ---
+Is 30 in Simple List? True
+Is 100 in Simple List? False
+Is [1, 2, 3] in Nested List? True
+
+--- 5. Iteration ---
+Iterating through Simple List:
+- 10
+- 20
+- 30
+- 40
+- 50
+Iterating through Nested List:
+- Sublist: [1, 2, 3]
+- Sublist: ['a', 'b', 'c']
+- Sublist: [True, False]
+
+--- 6. Indexing ---
+First element of Simple List (index 0): 10
+Last element of Simple List (index -1): 50
+Accessing element inside Nested List (nested_list[1][2]): c
+
+--- 7. Slicing ---
+Slice from index 1 to 4: [20, 30, 40]
+First 3 elements: [10, 20, 30]
+Every second element (using step): [10, 30, 50]
+Reversed list: [50, 40, 30, 20, 10]
