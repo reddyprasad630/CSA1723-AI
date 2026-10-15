@@ -1,0 +1,37 @@
+# Initialize a starting list
+my_list = ['apple', 'banana', 'cherry']
+print(f"Initial list: {my_list}\n")
+
+# 1. append() - Adds an element to the end of the list
+my_list.append('orange')
+print("--- 1. append('orange') ---")
+print(f"List: {my_list}\n")
+
+# 2. insert() - Adds an element at a specified index (equivalent to 'adding' at a position)
+my_list.insert(1, 'blueberry')
+print("--- 2. insert(1, 'blueberry') ---")
+print(f"List: {my_list}\n")
+
+# 3. extend() - Appends elements from another iterable (like another list) to the end
+more_fruits = ['grape', 'mango']
+my_list.extend(more_fruits)
+print("--- 3. extend(['grape', 'mango']) ---")
+print(f"List: {my_list}\n")
+
+OUTPUT:
+
+Initial list: ['apple', 'banana', 'cherry']
+
+--- 1. append('orange') ---
+List: ['apple', 'banana', 'cherry', 'orange']
+
+--- 2. insert(1, 'blueberry') ---
+List: ['apple', 'blueberry', 'banana', 'cherry', 'orange']
+
+--- 3. extend(['grape', 'mango']) ---
+List: ['apple', 'blueberry', 'banana', 'cherry', 'orange', 'grape', 'mango']
+
+--- 4. Deleting Elements ---
+After remove('banana'): ['apple', 'blueberry', 'cherry', 'orange', 'grape', 'mango']
+After pop(2) (removed 'cherry'): ['apple', 'blueberry', 'orange', 'grape', 'mango']
+After del my_list[0]: ['blueberry', 'orange', 'grape', 'mango']
