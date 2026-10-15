@@ -1,0 +1,58 @@
+import numpy as np
+
+# Define a sample matrix (non-square matrix to clearly show transposition)
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6]
+]
+
+print("Original Matrix:")
+for row in matrix:
+    print(row)
+
+# Method 1: Transpose using Nested Loops
+rows = len(matrix)
+cols = len(matrix[0])
+transposed_loops = [[0 for _ in range(rows)] for _ in range(cols)]
+
+for i in range(rows):
+    for j in range(cols):
+        transposed_loops[j][i] = matrix[i][j]
+
+print("\nMethod 1: Transposed using Nested Loops")
+for row in transposed_loops:
+    print(row)
+
+# Method 2: Transpose using List Comprehension (zip)
+transposed_zip = [list(x) for x in zip(*matrix)]
+
+print("\nMethod 2: Transposed using List Comprehension (zip)")
+for row in transposed_zip:
+    print(row)
+
+# Method 3: Transpose using NumPy
+np_matrix = np.array(matrix)
+transposed_numpy = np_matrix.T
+
+print("\nMethod 3: Transposed using NumPy")
+print(transposed_numpy)
+
+OUTPUT:
+Original Matrix:
+[1, 2, 3]
+[4, 5, 6]
+
+Method 1: Transposed using Nested Loops
+[1, 4]
+[2, 5]
+[3, 6]
+
+Method 2: Transposed using List Comprehension (zip)
+[1, 4]
+[2, 5]
+[3, 6]
+
+Method 3: Transposed using NumPy
+[[1 4]
+ [2 5]
+ [3 6]]
