@@ -1,0 +1,31 @@
+# Define a sample sentence
+sentence = "Python programming is fun and powerful"
+
+# Split the sentence into a list of words
+words = sentence.split()
+
+# Sort the words alphabetically (ignoring case)
+words_sorted = sorted(words, key=str.lower)
+
+# Reconstruct the sorted sentence
+sorted_sentence = " ".join(words_sorted)
+
+print("Original Sentence:")
+print(sentence)
+
+print("\nSorted Words:")
+print(words_sorted)
+
+print("\nSentence with words sorted alphabetically:")
+print(sorted_sentence)
+
+OUTPUT:
+
+Original Sentence:
+Python programming is fun and powerful
+
+Sorted Words:
+['and', 'fun', 'is', 'powerful', 'programming', 'Python']
+
+Sentence with words sorted alphabetically:
+and fun is powerful programming Python
