@@ -1,0 +1,71 @@
+def solve_8_queens():
+    solutions = []
+    # board representation: index represents row, value at index represents column
+    board = [-1] * 8
+
+    def is_safe(row, col):
+        # Check if placing a queen at (row, col) is valid
+        for r in range(row):
+            c = board[r]
+            # Check same column or diagonals
+            if c == col or abs(c - col) == abs(r - row):
+                return False
+        return True
+
+    def backtrack(row):
+        if row == 8:
+            solutions.append(list(board))
+            return
+        for col in range(8):
+            if is_safe(row, col):
+                board[row] = col
+                backtrack(row + 1)
+                board[row] = -1  # Reset on backtrack
+
+    backtrack(0)
+    return solutions
+
+def display_queen_board(board):
+    for row in range(8):
+
+OUTPUT:
+
+Total solutions found for 8-Queens: 92
+
+--- Solution 1 ---
+Q . . . . . . .
+. . . . Q . . .
+. . . . . . . Q
+. . . . . Q . .
+. . Q . . . . .
+. . . . . . Q .
+. Q . . . . . .
+. . . Q . . . .
+
+
+--- Solution 2 ---
+Q . . . . . . .
+. . . . . Q . .
+. . . . . . . Q
+. . Q . . . . .
+. . . . . . Q .
+. . . Q . . . .
+. Q . . . . . .
+. . . . Q . . .
+
+
+--- Solution 3 ---
+Q . . . . . . .
+. . . . . . Q .
+. . . Q . . . .
+. . . . . Q . .
+. . . . . . . Q
+. Q . . . . . .
+. . . . Q . . .
+. . Q . . . . .
+
+
+
+        line = ["Q" if col == board[row] else "." for col in range(8)]
+        print(" ".join(line))
+    print("\n")
