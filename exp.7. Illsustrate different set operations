@@ -1,0 +1,84 @@
+# 1. Defining sets
+set_A = {1, 2, 3, 4, 5}
+set_B = {4, 5, 6, 7, 8}
+print(f"Set A: {set_A}")
+print(f"Set B: {set_B}\n")
+
+# 2. Union (All unique elements from both sets)
+# Can use either the union() method or the '|' operator
+union_method = set_A.union(set_B)
+union_operator = set_A | set_B
+print("--- 2. Union ---")
+print(f"set_A.union(set_B): {union_method}")
+print(f"set_A | set_B       : {union_operator}\n")
+
+# 3. Intersection (Common elements in both sets)
+# Can use either the intersection() method or the '&' operator
+intersection_method = set_A.intersection(set_B)
+intersection_operator = set_A & set_B
+print("--- 3. Intersection ---")
+print(f"set_A.intersection(set_B): {intersection_method}")
+print(f"set_A & set_B             : {intersection_operator}\n")
+
+# 4. Difference (Elements in A but not in B)
+# Can use either the difference() method or the '-' operator
+difference_method = set_A.difference(set_B)
+difference_operator = set_A - set_B
+print("--- 4. Difference (A - B) ---")
+print(f"set_A.difference(set_B): {difference_method}")
+print(f"set_A - set_B           : {difference_operator}\n")
+
+# 5. Symmetric Difference (Elements in A or B, but not both)
+# Can use either the symmetric_difference() method or the '^' operator
+sym_diff_method = set_A.symmetric_difference(set_B)
+sym_diff_operator = set_A ^ set_B
+print("--- 5. Symmetric Difference ---")
+print(f"set_A.symmetric_difference(set_B): {sym_diff_method}")
+print(f"set_A ^ set_B                     : {sym_diff_operator}\n")
+
+# 6. Basic Set Modifications (Add and Remove)
+print("--- 6. Modifications ---")
+test_set = {10, 20}
+print(f"Initial test set: {test_set}")
+test_set.add(30)
+print(f"After add(30): {test_set}")
+test_set.discard(10)  # Removes 10; won't raise an error if 10 is missing
+print(f"After discard(10): {test_set}\n")
+
+# 7. Subset and Superset Checks
+print("--- 7. Subset & Superset Checks ---")
+set_C = {1, 2}
+print(f"Set C: {set_C}")
+print(f"Is Set C a subset of Set A? {set_C.issubset(set_A)}")
+print(f"Is Set A a superset of Set C? {set_A.issuperset(set_C)}")
+
+OUTPUT:
+
+Set A: {1, 2, 3, 4, 5}
+Set B: {4, 5, 6, 7, 8}
+
+--- 2. Union ---
+set_A.union(set_B): {1, 2, 3, 4, 5, 6, 7, 8}
+set_A | set_B       : {1, 2, 3, 4, 5, 6, 7, 8}
+
+--- 3. Intersection ---
+set_A.intersection(set_B): {4, 5}
+set_A & set_B             : {4, 5}
+
+--- 4. Difference (A - B) ---
+set_A.difference(set_B): {1, 2, 3}
+set_A - set_B           : {1, 2, 3}
+
+--- 5. Symmetric Difference ---
+set_A.symmetric_difference(set_B): {1, 2, 3, 6, 7, 8}
+set_A ^ set_B                     : {1, 2, 3, 6, 7, 8}
+
+--- 6. Modifications ---
+Initial test set: {10, 20}
+After add(30): {10, 20, 30}
+After discard(10): {20, 30}
+
+--- 7. Subset & Superset Checks ---
+Set C: {1, 2}
+Is Set C a subset of Set A? True
+Is Set A a superset of Set C? True
