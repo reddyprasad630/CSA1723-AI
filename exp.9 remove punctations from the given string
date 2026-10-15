@@ -1,0 +1,22 @@
+mport string
+
+# Define a sample string with various punctuation marks
+sample_text = "Hello, World! This is a test string... with punctuation: (like parentheses, semicolons; and quotes: 'hello')."
+
+# Option 1: Using string.punctuation and a list comprehension
+punctuation_set = set(string.punctuation)
+cleaned_text = "".join(char for char in sample_text if char not in punctuation_set)
+
+print("Original String:")
+print(sample_text)
+
+print("\nCleaned String (No Punctuation):")
+print(cleaned_text)
+
+OUTPUT:
+
+Original String:
+Hello, World! This is a test string... with punctuation: (like parentheses, semicolons; and quotes: 'hello').
+
+Cleaned String (No Punctuation):
+Hello World This is a test string with punctuation like parentheses semicolons and quotes hello
